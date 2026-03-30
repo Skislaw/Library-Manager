@@ -1,3 +1,6 @@
+package Files;
+
+import Files.BorrowableItems.Book;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -58,15 +61,19 @@ public class Manager {
                     int enteredUserId = scanner.nextInt();
                     scanner.nextLine();
 
-                    int bookId = library.findBookById(enteredBookId).getBookId();
-                    int userId = library.findUserById(enteredUserId).getUserId();
+                    int bookId;
+                    int userId;
 
-                    if (userId < 0 || bookId < 0) {
+                    try {
+                        bookId = library.findBookById(enteredBookId).getBookId();
+                        userId = library.findUserById(enteredUserId).getUserId();
+                    } catch (NullPointerException nullPointerException) {
                         System.out.println("User or book not found.");
                         break;
                     }
 
                     library.borrowBook(userId, bookId);
+
 
                 }
                 case "returnbook" -> {
@@ -79,13 +86,18 @@ public class Manager {
                     int enteredUserId = scanner.nextInt();
                     scanner.nextLine();
 
-                    int bookId = library.findBookById(enteredBookId).getBookId();
-                    int userId = library.findUserById(enteredUserId).getUserId();
+                    int bookId;
+                    int userId;
 
-                    if (userId < 0 || bookId < 0) {
+                    try {
+                        bookId = library.findBookById(enteredBookId).getBookId();
+                        userId = library.findUserById(enteredUserId).getUserId();
+                    } catch (NullPointerException nullPointerException) {
                         System.out.println("User or book not found.");
                         break;
                     }
+
+
 
                     library.returnBook(userId, bookId);
                 }
@@ -100,8 +112,6 @@ public class Manager {
                     if (userInput.equals("y")) {
                         System.out.println("Quitting...");
                         shouldContinue = false;
-                    } else if (userInput.equals("n")) {
-                        break;
                     }
                 }
 

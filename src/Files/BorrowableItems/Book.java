@@ -1,4 +1,9 @@
-public class Book implements Borrowable{
+package Files.BorrowableItems;
+
+import Files.User;
+
+
+public class Book implements Borrowable {
     private final String title;
     private final String  author;
     private final int id;
@@ -6,7 +11,7 @@ public class Book implements Borrowable{
 
     @Override
     public String toString() {
-        return "Book{" +
+        return "Files.BorrowableItems.Book{" +
                 "title='" + title + '\'' +
                 ", author='" + author + '\'' +
                 ", id=" + id +
@@ -21,14 +26,6 @@ public class Book implements Borrowable{
         this.isAvailable = isAvailable;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
     public int getBookId() {
         return id;
     }
@@ -40,7 +37,7 @@ public class Book implements Borrowable{
     @Override
     public void borrow(User user) {
         if (!isAvailable) {
-            System.out.println("Book unavailable");
+            System.out.println("Files.BorrowableItems.Book unavailable");
             return;
         }
 

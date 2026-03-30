@@ -1,3 +1,5 @@
+package Files;
+
 public class Main {
     void main() {
         Manager manager = new Manager();

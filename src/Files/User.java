@@ -1,3 +1,6 @@
+package Files;
+
+import Files.BorrowableItems.Book;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +14,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "Files.User{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", age=" + age +
@@ -32,12 +35,6 @@ public class User {
     public String getName() {
         return name;
     }
-
-
-    public String getSurname() {
-        return surname;
-    }
-
 
     public int getUserId() {
         return UserId;

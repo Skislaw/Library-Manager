@@ -1,3 +1,6 @@
+package Files;
+
+import Files.BorrowableItems.Book;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,22 +29,6 @@ public class Library {
                 .findFirst()
                 .orElse(null);
     }
-
-//    public Integer userNameToId(String name, String surname) {
-//        return users.stream()
-//                .filter(user -> user.getName().equals(name))
-//                .filter(user -> user.getSurname().equals(surname))
-//                .map(User::getUserId)
-//                .findFirst().orElse(null);
-//    }
-//
-//    public Integer bookTitleToId(String title, String author) {
-//        return books.stream()
-//                .filter(book -> book.getTitle().equals(title))
-//                .filter(book -> book.getAuthor().equals(author))
-//                .map(Book::getBookId)
-//                .findFirst().orElse(null);
-//    }
 
     public void addBook(Book book) {
         books.add(book);
