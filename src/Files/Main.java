@@ -2,8 +2,10 @@ package Files;
 
 public class Main {
     void main() {
-        Manager manager = new Manager();
+        LibraryRepository repo = new LibraryRepository();
+        LibraryService service = new LibraryService(repo);
+        CLIManager cliManager = new CLIManager(repo, service);
 
-        manager.runner();
+        cliManager.runner();
     }
 }

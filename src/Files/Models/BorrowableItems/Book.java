@@ -1,9 +1,10 @@
-package Files.BorrowableItems;
+package Files.Models.BorrowableItems;
 
-import Files.User;
+import Files.Models.Identifiable;
+import Files.Models.User;
 
 
-public class Book implements Borrowable {
+public class Book implements Borrowable, Identifiable {
     private final String title;
     private final String  author;
     private final int id;
@@ -26,12 +27,12 @@ public class Book implements Borrowable {
         this.isAvailable = isAvailable;
     }
 
-    public int getBookId() {
-        return id;
-    }
-
     public boolean isAvailable() {
         return isAvailable;
+    }
+
+    public void setAvailable(boolean available) {
+        isAvailable = available;
     }
 
     @Override
@@ -53,5 +54,10 @@ public class Book implements Borrowable {
         user.getBorrowedBooks().remove(this);
 
         System.out.println(user.getName() + " returned book " + title);
+    }
+
+    @Override
+    public int getId() {
+        return id;
     }
 }

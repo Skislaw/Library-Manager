@@ -1,14 +1,14 @@
-package Files;
+package Files.Models;
 
-import Files.BorrowableItems.Book;
+import Files.Models.BorrowableItems.Book;
 import java.util.ArrayList;
 import java.util.List;
 
-public class User {
+public class User implements Identifiable {
     private final String name;
     private final String surname;
     private final int age;
-    private final int UserId;
+    private final int id;
     List<Book> books = new ArrayList<>();
     List<Book> borrowedBooks = new ArrayList<>();
 
@@ -18,7 +18,7 @@ public class User {
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", age=" + age +
-                ", UserId=" + UserId +
+                ", UserId=" + id +
                 ", books=" + books +
                 ", borrowedBooks=" + borrowedBooks +
                 '}';
@@ -28,7 +28,7 @@ public class User {
         this.name = name;
         this.surname = surname;
         this.age = age;
-        UserId = userId;
+        id = userId;
         this.books = books;
     }
 
@@ -36,11 +36,12 @@ public class User {
         return name;
     }
 
-    public int getUserId() {
-        return UserId;
-    }
-
     public List<Book> getBorrowedBooks() {
         return borrowedBooks;
+    }
+
+    @Override
+    public int getId() {
+        return id;
     }
 }
