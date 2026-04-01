@@ -1,6 +1,6 @@
-package Files.Models.BorrowableItems;
+package PodstawyOOP.Models.BorrowableItems;
 
-import Files.Models.User;
+import PodstawyOOP.Models.User;
 
 public interface Borrowable {
     void borrow(User user);

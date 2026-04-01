@@ -1,7 +1,7 @@
-package Files;
+package PodstawyOOP;
 
-import Files.Models.BorrowableItems.Book;
-import Files.Models.User;
+import PodstawyOOP.Models.BorrowableItems.Book;
+import PodstawyOOP.Models.User;
 
 import java.util.Optional;
 
@@ -10,6 +10,14 @@ public class LibraryService {
 
     public LibraryService(LibraryRepository repository) {
         this.repository = repository;
+    }
+
+    public void addBook(Book book) {
+        repository.addBook(book);
+    }
+
+    public void addUser(User user) {
+        repository.addUser(user);
     }
 
     public void showAvailableBooks() {
@@ -55,4 +63,14 @@ public class LibraryService {
         User user = userOptional.get();
         book.returnItem(user);
     }
+
+    public int getUserId() {
+        return repository.generateUserId();
+    }
+
+    public int getBookId() {
+        return repository.generateBookId();
+    }
+
+
 }

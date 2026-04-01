@@ -1,7 +1,7 @@
-package Files.Models.BorrowableItems;
+package PodstawyOOP.Models.BorrowableItems;
 
-import Files.Models.Identifiable;
-import Files.Models.User;
+import PodstawyOOP.Models.Identifiable;
+import PodstawyOOP.Models.User;
 
 
 public class Book implements Borrowable, Identifiable {

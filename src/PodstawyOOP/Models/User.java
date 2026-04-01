@@ -1,6 +1,6 @@
-package Files.Models;
+package PodstawyOOP.Models;
 
-import Files.Models.BorrowableItems.Book;
+import PodstawyOOP.Models.BorrowableItems.Book;
 import java.util.ArrayList;
 import java.util.List;
 
